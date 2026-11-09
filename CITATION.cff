@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Oikawa"
+    given-names: "Shun-ichi"
+    affiliation: "Invited Teacher, Faculty of Engineering, Hokkaido University"
+title: "BIA (Binary Interaction Approximation) Public C/GSL Code Package (bia_public)"
+version: "1.0.0"
+doi: "10.5281/zenodo.XXXXXXX"  # ※Zenodo連携後に自動付与されるDOIに後で置き換えます
+date-released: "2026-11-06"    # ※実際の公開日に合わせて変更してください
+url: "https://github.com"

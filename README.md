@@ -4,7 +4,7 @@ A high-precision, highly optimized sequential C/GSL implementation for solving N
 SECTION-A: Authors and Affiliation
 A-1: Name: Shun-ichi Oikawa (及川 俊一)
 A-2: Role: Invited Teacher, Faculty of Engineering, Hokkaido University, Sapporo 060-8628, Japan.
-A-3: Email: oikawa qe eng hokudai ac jp
+A-3: Email: oikawa@khaki.plala.or.jp
 
 SECTION-B: Citation
 If you use this code package, its mathematical formulations, or benchmark environments in your research, publications, or conference presentations, please cite the following original peer-reviewed paper:
@@ -30,6 +30,8 @@ Unlike brute-force sequential N-body simulations, this public package (bia_publi
 C-8: By leveraging the core "Integration-free" (analytical reduction) nature of the BIA framework, the inner loops eliminate redundant iterations and memory latency during single-particle updates. This elegant mathematical architecture allows the sequential code to achieve stellar execution speeds, completing time evolution for N = 28 within milliseconds, while simultaneously achieving ultra-high precision approaching the fundamental limits of double-precision floating-point representation.
 
 SECTION-D: Repository Structure
+
+<pre style="white-space: pre-wrap;">
 .
 ├── All Source Files     # Complete C/Fortran source and header files (.c, .f, .h)
 ├── Makefile             # Build configuration for compilation
@@ -37,6 +39,7 @@ SECTION-D: Repository Structure
 ├── 0000028.ccc          # Initial condition data file (Example dataset for N=28)
 ├── LICENSE              # GNU General Public License v3 (GPL v3)
 └── README.md            # This documentation framework
+</pre>.
 
 SECTION-E: Requirements and Dependencies
 E-1: [C Compiler] GCC (or any standard ANSI C compliant compiler)

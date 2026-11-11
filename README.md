@@ -1,6 +1,8 @@
 Binary Interaction Approximation (BIA) Code Package
 A high-precision, highly optimized sequential C/GSL implementation for solving N-body problems using the Binary Interaction Approximation (BIA) framework.
 
+[![DOI](https://zenodo.org/badge/1451113403.svg)](https://doi.org/10.5281/zenodo.24122562)
+
 SECTION-A: Authors and Affiliation
 A-1: Name: Shun-ichi Oikawa (及川 俊一)
 A-2: Role: Invited Teacher, Faculty of Engineering, Hokkaido University, Sapporo 060-8628, Japan.

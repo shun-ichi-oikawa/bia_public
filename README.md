@@ -114,6 +114,8 @@ Based on this scaling, the interaction parameter provided in nbody.inp (e.g., 3e
 
 SECTION-K: Numerical Properties and Theoretical Considerations
 
+* **K-0: Strictly Momentum-Conserving Formulation:**
+  The BIA numerical scheme is constructed as a **strictly momentum-conserving** algorithm. By enforcing exact pairwise action-reaction symmetry ($\Delta \mathbf{v}_i = +\Delta \mathbf{v}_{ij}$ and $\Delta \mathbf{v}_j = -\Delta \mathbf{v}_{ij}$) across every interacting particle pair, total linear momentum is conserved down to the double-precision round-off limit without artificial center-of-mass drift.
 K-1: Absolute Robustness Against Binary Bounds (Close Encounters)
 One of the most profound advantages of the BIA paradigm lies in its absolute immunity to the stiffness or singularities caused by close-encounter particles, such as binary bound states. In traditional brute-force N-body codes or standard variable-step numerical integrators, when two particles approach each other closely, the gravitational or Coulomb forces diverge, forcing the time-step size to shrink toward zero. This triggers an immediate computational bottleneck, causing the simulation to grind to a complete halt. By contrast, because BIA reduces the global network into a superposition of isolated two-body dynamics, it allows for the seamless integration of exact analytical solutions (the inverse problem solved via Newton's method). Once these exact analytical solvers are fully utilized, the system never suffers from time-step collapse. No matter how extremely close two particles encounter each other, or how tight a binary system becomes, the simulation is mathematically guaranteed to progress without ever freezing or failing.
 K-2: Long-Range Constraints and Mitigations

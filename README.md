@@ -17,6 +17,7 @@ B-3: Journal: Communications in Nonlinear Science and Numerical Simulation (Comm
 B-4: Volume/Issue/Pages: Vol. 32, pp. 273-284
 B-5: Year: 2016
 B-6: DOI Link: https://doi.org (Please replace with the official DOI link if applicable)
+*B-7: Software Archive (Zenodo DOI):** Shun-ichi Oikawa, *Binary Interaction Approximation (BIA) Code Package (v1.0.1)*, Zenodo (2026). DOI: [10.5281/zenodo.24122562](https://doi.org/10.5281/zenodo.24122562)
 
 SECTION-C: Background and Academic Significance
 

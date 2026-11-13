@@ -1,13 +1,15 @@
-## Binary Interaction Approximation (BIA) Code Package
+# Binary Interaction Approximation (BIA) Code Package
 
-A high-precision C/GSL N-body simulation package based on the Binary Interaction Approximation (BIA) framework [Zenodo DOI: 10.5281/zenodo.24122562](https://doi.org).
+[![DOI](https://zenodo.org)](https://doi.org)
 
 ## SECTION-A: Authors and Affiliation
 * **A-1 to A-3:** Shun-ichi Oikawa (Faculty of Engineering, Hokkaido University, Sapporo, Japan; oikawa@khaki.plala.or.jp)
 
 ## SECTION-B: Citation
 * **B-1 to B-6:** Shun-ichi Oikawa, *A Force Evaluation Free Method to N-Body Problems: Binary Interaction Approximation*, Communications in Nonlinear Science and Numerical Simulation, Vol. 32, pp. 273–284 (2016). DOI: [10.1016/j.cnsns.2015.11.011](https://doi.org)
-* **B-7 & B-8:** Software archives available on Zenodo (DOI: [10.5281/zenodo.24122562](https://doi.org) and [10.5281/zenodo.24131822](https://doi.org)).
+* **B-7 & B-8:** Software archives available on Zenodo:
+  * Sequential C/GSL Package (v1.0.1): [10.5281/zenodo.24122562](https://doi.org)
+  * 3D Multi-Body Hybrid Fortran/CUDA Code (v1.0.0): [10.5281/zenodo.24131822](https://doi.org)
 
 ## SECTION-C: Background and Academic Significance
 * **C-1 & C-2:** Originally developed as a verification tool to compare BIA against the standard Hermite integration method following peer-review recommendations.

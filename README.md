@@ -2,14 +2,14 @@
 
 [![DOI](https://zenodo.org)](https://doi.org)
 
-A sequential C/GSL verification and benchmark package for the **Binary Interaction Approximation (BIA)** in \(N\)-body problems.
+A sequential C/GSL verification and benchmark package for the **Binary Interaction Approximation (BIA)** in $N$-body problems.
 
 ---
 
 ## Authors and Affiliation
 
 * **Author**: Shun-ichi Oikawa (及川 俊一) — Faculty of Engineering, Hokkaido University, Sapporo 060-8628, Japan
-* **Contact**: `lopia312oikawa@gmail.com` (legacy: `oikawa@khaki.plala.or.jp`) | ORCID: [0009-0001-5603-2787](https://orcid.org)
+* **Contact**: `lopia312oikawa@gmail.com` | ORCID: [0009-0001-5603-2787](https://orcid.org)
 
 ---
 
@@ -22,7 +22,7 @@ A sequential C/GSL verification and benchmark package for the **Binary Interacti
 
 ## Background, Requirements & Setup
 
-* **Significance**: Analytical reduction of two-body motion in \((r, \theta)\) via GSL ODE solvers; achieves \(\sim 10^{-10}\) precision for \(N=28\).
+* **Significance**: Analytical reduction of two-body motion in $(r, \theta)$ via GSL ODE solvers; achieves $\sim 10^{-10}$ precision for $N=28$.
 * **Dependencies**: GCC / ANSI C, `gfortran`, and GNU Scientific Library (GSL).
 * **Usage**: Configure `nbody.inp` (`28, 3e-7`), place `0000028.ccc`, run `make`, and execute `./gsl_dim`. Full parameter and architectural details can be referenced directly in the project files.
 

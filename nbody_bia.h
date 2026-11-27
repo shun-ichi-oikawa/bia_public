@@ -37,7 +37,7 @@ void correction_L       (       const int N, double *XYZUVW, double *L_ini, doub
 
         const double one[1] = {1.0};
 
-        // 1. 実験室系の重心位置 (R_cm) と重心速度 (V_cm) を退避
+        // 1. Save center-of-mass position (R_cm) and velocity (V_cm) in the laboratory frame
         double R_cm[3] = {
                 cblas_ddot( N, one, 0, XYZUVW + 0, 6) / N,
                 cblas_ddot( N, one, 0, XYZUVW + 1, 6) / N,
@@ -49,17 +49,17 @@ void correction_L       (       const int N, double *XYZUVW, double *L_ini, doub
                 cblas_ddot( N, one, 0, XYZUVW + 5, 6) / N
         };
 
-        // 2. 重心系へ変換
+        // 2. Transform to the center-of-mass frame
         for (int d = 0; d < 3; d++) {
                 cblas_daxpy( N, -1.0, &R_cm[d], 0, XYZUVW + d,     6);
                 cblas_daxpy( N, -1.0, &V_cm[d], 0, XYZUVW + d + 3, 6);
         }
 
-        // 重心系の運動エネルギー KE_cm = KE_lab - 0.5 * N * |V_cm|^2
+        // Kinetic energy in the center-of-mass frame: KE_cm = KE_lab - 0.5 * N * |V_cm|^2
         const double V_cm_sq = dot_product3(V_cm, V_cm);
         const double KE_cm   = KE - 0.5 * N * V_cm_sq;
 
-        // 3. 重心系での角運動量・エネルギー結合補正
+        // 3. Coupled angular momentum and energy correction in the center-of-mass frame
         double  A[9] = {0};
         double  r[3], v[3], l[3];
   const double CorFctr = sqrt( 1.0 - DE / KE_cm );
@@ -109,7 +109,7 @@ void correction_L       (       const int N, double *XYZUVW, double *L_ini, doub
                 for (int i = 0; i < 3; i++) UVW[i] = V_new[i] * sqrt( v_sq / V_new_sq ) * CorFctr;
         }
 
-        // 4. 補正により生じた重心速度の微小ドリフトをゼロ化
+        // 4. Eliminate residual center-of-mass velocity drift induced by the correction
         double  dU[1] = { cblas_ddot( N, one, 0, XYZUVW + 3, 6) / N };
         double  dV[1] = { cblas_ddot( N, one, 0, XYZUVW + 4, 6) / N };
         double  dW[1] = { cblas_ddot( N, one, 0, XYZUVW + 5, 6) / N };
@@ -117,7 +117,7 @@ void correction_L       (       const int N, double *XYZUVW, double *L_ini, doub
         cblas_daxpy( N,-1.0, dV, 0, XYZUVW + 4, 6);
         cblas_daxpy( N,-1.0, dW, 0, XYZUVW + 5, 6);
 
-        // 5. 実験室系へ復帰
+        // 5. Transform back to the laboratory frame
         for (int d = 0; d < 3; d++) {
                 cblas_daxpy( N, +1.0, &R_cm[d], 0, XYZUVW + d,     6);
                 cblas_daxpy( N, +1.0, &V_cm[d], 0, XYZUVW + d + 3, 6);
